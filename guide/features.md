@@ -1,6 +1,6 @@
 # 지원하는 기능들 {#features}
 
-기본적으로 vite는 여타 정적 파일 서버와 크게 다르지 않습니다. 다만, vite는 네이티브 ESM 말고도 기존 번들러에서 제공하던 기능을 대부분 지원한다는 차이점이 있습니다.
+기본적으로 Vite는 여타 정적 파일 서버와 크게 다르지 않습니다. 다만, Vite는 네이티브 ESM 말고도 기존 번들러에서 제공하던 기능을 대부분 지원한다는 차이점이 있습니다.
 
 ## NPM을 이용한 디펜던시 `import` 그리고 사전 번들링 {#npm-dependency-resolving-and-pre-building}
 
@@ -10,25 +10,25 @@
 import { someMethod } from 'my-dep'
 ```
 
-모듈의 위치를 찾을 수 없기 때문인데, vite는 다음을 기준으로 모듈을 가져오기 때문에 위 코드 역시 정상적으로 실행됩니다.
+모듈의 위치를 찾을 수 없기 때문인데, Vite는 다음을 기준으로 모듈을 가져오기 때문에 위 코드 역시 정상적으로 실행됩니다.
 
-1. Vite를 통해 ESM 스타일로 [사전에 번들링 된](./dep-pre-bundling) CommonJS 및 UMD 모듈. 이 과정은 [Esbuild](https://esbuild.github.io/)를 통해 이루어지며, JavaScript 기반의 다른 번들러보다 빠른 콜드 스타트가 가능합니다.
+1. Vite를 통해 ESM 스타일로 [사전에 번들링된](./dep-pre-bundling) CommonJS 및 UMD 모듈. 이 과정은 [Esbuild](https://esbuild.github.io/)를 통해 이루어지며, JavaScript 기반의 다른 번들러보다 빠른 콜드 스타트가 가능합니다.
 
 2. `/node_modules/.vite/deps/my-dep.js?v=f3sf2ebd`와 같이 URL을 이용해 ESM을 지원하는 브라우저에서 모듈을 가져올 수 있도록 `import` 구문을 수정.
 
 참고로, **디펜던시는 반드시 캐시됩니다.**
 
-vite는 HTTP 헤더를 이용해 요청한 디펜던시를 브라우저에서 캐싱하도록 합니다. 만약 디펜던시의 수정 또는 디버깅이 필요하다면 [여기](./dep-pre-bundling#browser-cache)를 참고해주세요.
+Vite는 HTTP 헤더를 이용해 요청한 디펜던시를 브라우저에서 캐싱하도록 합니다. 만약 디펜던시의 수정 또는 디버깅이 필요하다면 [여기](./dep-pre-bundling#browser-cache)를 참고해주세요.
 
 ## Hot Module Replacement {#hot-module-replacement}
 
-vite는 기본적으로 ESM를 통해 [HMR API](./api-hmr)를 제공합니다. HMR 기능이 있는 프레임워크는 API를 활용하여 페이지를 다시 로드하거나 애플리케이션 상태를 날려버리지 않고 즉각적이고 정확한 업데이트를 제공할 수 있습니다. vite는 [Vue Single File Components](https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue), [React Fast Refresh](https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react) 또는 [@prefresh/vite](https://github.com/JoviDeCroock/prefresh/tree/main/packages/vite)과 같은 First-party HMR 모듈을 제공하고 있습니다.
+Vite는 기본적으로 ESM를 통해 [HMR API](./api-hmr)를 제공합니다. HMR 기능이 있는 프레임워크는 API를 활용하여 페이지를 다시 로드하거나 애플리케이션 상태를 날려버리지 않고 즉각적이고 정확한 업데이트를 제공할 수 있습니다. Vite는 [Vue Single File Components](https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue), [React Fast Refresh](https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react) 또는 [@prefresh/vite](https://github.com/JoviDeCroock/prefresh/tree/main/packages/vite)과 같은 First-party HMR 모듈을 제공하고 있습니다.
 
 물론, [`create-vite`](./)에서 제공하는 템플릿 안에는 HMR 모듈이 포함되어 있기 때문에 굳이 위와 같은 방법을 따르지 않아도 됩니다.
 
 ## TypeScript {#typescript}
 
-vite는 `.ts` 파일에 대한 컴파일링 및 Import 역시 지원합니다.
+Vite는 `.ts` 파일에 대한 컴파일링 및 Import 역시 지원합니다.
 
 ### 트랜스파일만 수행 {#transpile-only}
 
@@ -44,7 +44,7 @@ Vite의 역할은 소스 모듈을 가능한 빠르게 브라우저에서 실행
 
 Vite의 TypeScript 컴파일링은 [Esbuild](https://github.com/evanw/esbuild)를 이용하며, TypeScript 소스 코드를 JavaScript 소스 코드로 변환하는 작업에 대해 `tsc` 대비 약 20~30배 정도 빠른 퍼포먼스를 보이고 있습니다. (HMR은 50ms 미만)
 
-참고로 타입만을 가져오는 경우 잘못 번들링이 될 수 있으며, 이는 [타입 전용 Imports와 Exports](https://www.typescriptlang.org/ko/docs/handbook/release-notes/typescript-3-8.html#type-only-imports-and-export)를 사용하여 이 문제를 우회할 수 있습니다:
+참고로 타입만을 가져오는 경우 잘못 번들링될 수 있으며, 이는 [타입 전용 Imports와 Exports](https://www.typescriptlang.org/ko/docs/handbook/release-notes/typescript-3-8.html#type-only-imports-and-export)를 사용하여 이 문제를 우회할 수 있습니다:
 
 ```ts
 import type { T } from 'only/types'
@@ -117,7 +117,7 @@ Vite 스타터 템플릿은 TypeScript의 특정 버전과 설정만을 지원�
 
 ### Client Types {#client-types}
 
-vite는 기본적으로 Node.js API 기반의 타입 시스템을 차용하고 있습니다. 따라서 클라이언트 측의 환경을 위해 Shim을 구성하고자 한다면 아래와 같이 `d.ts` 선언 파일을 추가해주세요.
+Vite는 기본적으로 Node.js API 기반의 타입 시스템을 차용하고 있습니다. 따라서 클라이언트 측의 환경을 위해 Shim을 구성하고자 한다면 아래와 같이 `d.ts` 선언 파일을 추가해주세요.
 
 ```typescript
 /// <reference types="vite/client" />
@@ -161,7 +161,7 @@ vite는 기본적으로 Node.js API 기반의 타입 시스템을 차용하고 �
 
 ## Vue {#vue}
 
-vite는 기본적으로 Vue를 지원하고 있습니다.
+Vite는 기본적으로 Vue를 지원하고 있습니다.
 
 - Vue 3 SFC: [@vitejs/plugin-vue](https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue)
 - Vue 3 JSX: [@vitejs/plugin-vue-jsx](https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue-jsx)
@@ -209,13 +209,13 @@ export default defineConfig({
 
 ### CSS `@import` 그리고 URL 재정의(Rebasing) {#import-inlining-and-rebasing}
 
-vite는 `postcss-import`를 이용해 CSS의 `@import`를 처리합니다. 또한, CSS `url()`로 참조되는 모든 리소스들(다른 디렉터리에 존재한다 해도)에 대해 별다른 설정 없이 자동으로 Base를 맞추어주는 재정의(Rebasing) 작업 역시 진행해주고 말이죠.
+Vite는 `postcss-import`를 이용해 CSS의 `@import`를 처리합니다. 또한, CSS `url()`로 참조되는 모든 리소스들(다른 디렉터리에 존재한다 해도)에 대해 별다른 설정 없이 자동으로 Base를 맞추어주는 재정의(Rebasing) 작업 역시 진행해주고 말이죠.
 
 별칭을 이용한 `@import`도 지원하며, URL 재정의나 별칭은 CSS 말고도 Sass와 Less에서도 [사용이 가능합니다](#css-pre-processors).
 
 ### PostCSS {#postcss}
 
-만약 프로젝트에 [PostCSS 설정 파일](https://github.com/postcss/postcss-load-config)이 존재한다면, vite는 이를 이용해 모든 CSS 파일에 해당 설정을 적용합니다.
+만약 프로젝트에 [PostCSS 설정 파일](https://github.com/postcss/postcss-load-config)이 존재한다면, Vite는 이를 이용해 모든 CSS 파일에 해당 설정을 적용합니다.
 
 참고로 CSS의 축소화는 PostCSS 이후에 진행되며, [`build.cssTarget`](/config/build-options.md#build-csstarget) 옵션을 이용해 설정할 수 있습니다.
 
@@ -251,9 +251,9 @@ document.getElementById('foo').className = applyColor
 
 ### CSS Pre-processors {#css-pre-processors}
 
-vite는 모던 브라우저만을 타깃으로 하기에, 표준을 준수하도록 [postcss-nesting](https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-nesting)과 같은 CSSWG 초안을 구현한 PostCSS 플러그인과 함께 네이티브 CSS 변수를 사용하도록 권고하고 있습니다.
+Vite는 모던 브라우저만을 타깃으로 하기에, 표준을 준수하도록 [postcss-nesting](https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-nesting)과 같은 CSSWG 초안을 구현한 PostCSS 플러그인과 함께 네이티브 CSS 변수를 사용하도록 권고하고 있습니다.
 
-다시 말해, vite는 기본적으로 `.scss`, `.sass`, `.less`, `.styl`, `.stylus`와 CSS 전처리기가 필요한 파일을 지원하지 않습니다. 다만 필요한 경우 어렵지 않게 설치해 바로 사용할 수 있습니다.
+다시 말해, Vite는 기본적으로 `.scss`, `.sass`, `.less`, `.styl`, `.stylus`와 CSS 전처리기가 필요한 파일을 지원하지 않습니다. 다만 필요한 경우 어렵지 않게 설치해 바로 사용할 수 있습니다.
 
 ```bash
 # .scss 그리고 .sass
@@ -365,7 +365,7 @@ import { field } from './example.json'
 
 ## Glob Import {#glob-import}
 
-vite는 `import.meta.glob` 함수를 이용해 여러 모듈을 한 번에 가져올 수 있도록 지원하고 있습니다. 이 때, Glob 패턴을 이용합니다.
+Vite는 `import.meta.glob` 함수를 이용해 여러 모듈을 한 번에 가져올 수 있도록 지원하고 있습니다. 이 때, Glob 패턴을 이용합니다.
 
 ```js twoslash
 import 'vite/client'
@@ -721,13 +721,13 @@ CSP를 배포하려면 Vite 내부적으로 특정 지시문 또는 구성을 �
 
 ### CSS 코드 분리 {#css-code-splitting}
 
-vite는 비동기적으로 불러와지는 청크 내에 CSS 코드가 포함된 경우, 이를 자동으로 추출해 파일로 분리합니다. 이후 해당 청크를 불러올 때 `<link>` 태그를 이용해 분리된 CSS 코드를 불러오게끔 하며, CSS가 모두 계산된 후에 청크를 렌더하도록 합니다. 굳이 왜 이렇게 복잡한 과정을 거칠까요? 바로 이 과정을 통해 CSS가 렌더링될 때 화면이 잠깐 반짝이는 [FOUC 현상](https://en.wikipedia.org/wiki/Flash_of_unstyled_content#:~:text=A%20flash%20of%20unstyled%20content,before%20all%20information%20is%20retrieved.)을 회피할 수 있게 되기 때문입니다.
+Vite는 비동기적으로 불러와지는 청크 내에 CSS 코드가 포함된 경우, 이를 자동으로 추출해 파일로 분리합니다. 이후 해당 청크를 불러올 때 `<link>` 태그를 이용해 분리된 CSS 코드를 불러오게끔 하며, CSS가 모두 계산된 후에 청크를 렌더하도록 합니다. 굳이 왜 이렇게 복잡한 과정을 거칠까요? 바로 이 과정을 통해 CSS가 렌더링될 때 화면이 잠깐 반짝이는 [FOUC 현상](https://en.wikipedia.org/wiki/Flash_of_unstyled_content#:~:text=A%20flash%20of%20unstyled%20content,before%20all%20information%20is%20retrieved.)을 회피할 수 있게 되기 때문입니다.
 
 물론, 모든 CSS가 그냥 일반적인 각각의 파일로 저장된 경우라면 굳이 이러한 기능을 사용할 필요가 없습니다. 이러한 경우 [`build.cssCodeSplit`](/config/build-options.md#build-csscodesplit) 옵션의 값을 `false`로 설정해 비활성화가 가능합니다.
 
 ### Preload Directives Generation {#preload-directives-generation}
 
-vite는 빌드 시 Direct Import 구문에 대해 `<link ref="modulepreload">` 디렉티브를 이용해 미리 모듈을 캐싱하도록 자동으로 변환합니다. 덕분에 해당 모듈을 필요로 하는 경우 이를 바로 사용할 수 있게 됩니다. (`modulepreload`에 대한 더 자세한 내용은 [MDN doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/modulepreload) 또는 [Google developers](https://developers.google.com/web/updates/2017/12/modulepreload) 문서를 참고해주세요. - 옮긴이)
+Vite는 빌드 시 Direct Import 구문에 대해 `<link ref="modulepreload">` 디렉티브를 이용해 미리 모듈을 캐싱하도록 자동으로 변환합니다. 덕분에 해당 모듈을 필요로 하는 경우 이를 바로 사용할 수 있게 됩니다. (`modulepreload`에 대한 더 자세한 내용은 [MDN doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/modulepreload) 또는 [Google developers](https://developers.google.com/web/updates/2017/12/modulepreload) 문서를 참고해주세요. - 옮긴이)
 
 ### Async Chunk Loading Optimization {#async-chunk-loading-optimization}
 
@@ -744,10 +744,10 @@ import graphSvg from '../images/graph.svg?raw'
 Entry ---> A ---> C
 ```
 
-vite는 Preload 스텝을 이용해 `A`를 가져올 때 `C` 청크를 **병렬적(Parallel)으로** 가져올 수 있도록 Dynamic Import 구문을 자동으로 재작성합니다.
+Vite는 Preload 스텝을 이용해 `A`를 가져올 때 `C` 청크를 **병렬적(Parallel)으로** 가져올 수 있도록 Dynamic Import 구문을 자동으로 재작성합니다.
 
 ```
 Entry ---> (A + C)
 ```
 
-vite는 모든 Direct Import 구문에 대해 Preload 하도록 함으로써, 쓸 데 없이 낭비되는 네트워크 왕복을 줄이도록 구성합니다.
+Vite는 모든 Direct Import 구문에 대해 Preload 하도록 함으로써, 쓸 데 없이 낭비되는 네트워크 왕복을 줄이도록 구성합니다.

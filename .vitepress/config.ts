@@ -217,7 +217,7 @@ export default defineConfig({
               link: '/guide/using-plugins',
             },
             {
-              text: '사전 번들링 된 디펜던시',
+              text: '사전 번들링된 디펜던시',
               link: '/guide/dep-pre-bundling',
             },
             {

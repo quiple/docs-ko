@@ -78,7 +78,7 @@ export default defineConfig({
 
 ## optimizeDeps.holdUntilCrawlEnd {#optimizedeps-holduntilcrawlend}
 
-- **실험적 기능**: [이 곳에 피드백을 남겨주세요](https://github.com/vitejs/vite/discussions/15834)
+- **실험적 기능**: [이곳에 피드백을 남겨주세요](https://github.com/vitejs/vite/discussions/15834)
 - **타입:** `boolean`
 - **기본값:** `true`
 
@@ -87,7 +87,7 @@ export default defineConfig({
 ## optimizeDeps.disabled {#optimizedeps-disabled}
 
 - **지원 중단 예정**
-- **실험적 기능:** [이 곳에 피드백을 남겨주세요](https://github.com/vitejs/vite/discussions/13839)
+- **실험적 기능:** [이곳에 피드백을 남겨주세요](https://github.com/vitejs/vite/discussions/13839)
 - **타입:** `boolean | 'build' | 'dev'`
 - **기본값:** `'build'`
 

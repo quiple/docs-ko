@@ -150,7 +150,7 @@ PR과 커밋 타이틀은 [시멘틱 커밋 메시지](https://gist.github.com/j
 # Node.js 시작하기 {#get-started-with-node-js}
 ```
 
-규칙은 [Vitepress에서 사용하는](https://github.com/vuejs/vitepress/blob/00dc1e6742273fe6fde74e7abbd160bd7724af4d/src/node/markdown/index.ts#L13) [`@mdit-vue/shared` 패키지의 `slugify` 함수](https://github.com/mdit-vue/mdit-vue/blob/main/packages/shared/src/slugify.ts)와 동일합니다. [이 곳에서](https://stackblitz.com/edit/stackblitz-starters-e8bzip?file=index.js) 직접 테스트해 볼 수도 있습니다.
+규칙은 [Vitepress에서 사용하는](https://github.com/vuejs/vitepress/blob/00dc1e6742273fe6fde74e7abbd160bd7724af4d/src/node/markdown/index.ts#L13) [`@mdit-vue/shared` 패키지의 `slugify` 함수](https://github.com/mdit-vue/mdit-vue/blob/main/packages/shared/src/slugify.ts)와 동일합니다. [이곳에서](https://stackblitz.com/edit/stackblitz-starters-e8bzip?file=index.js) 직접 테스트해 볼 수도 있습니다.
 
 이렇게 지정된 앵커는 다음과 같이 참조가 가능합니다:
 

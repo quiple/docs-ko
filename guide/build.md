@@ -76,7 +76,7 @@ export default defineConfig({
 })
 ```
 
-`--watch` 플래그가 활성화된 상태에서 `vite.config.js` 또는 번들링 된 파일을 변경하게 되면 다시 빌드가 시작됩니다.
+`--watch` 플래그가 활성화된 상태에서 `vite.config.js` 또는 번들링된 파일을 변경하게 되면 다시 빌드가 시작됩니다.
 
 ## Multi-Page App {#multi-page-app}
 
@@ -226,7 +226,7 @@ dist/my-lib.umd.cjs 0.30 kB / gzip: 0.16 kB
 ## Base 옵션 상세 설정 {#advanced-base-options}
 
 ::: warning
-실험적인 기능입니다. [이 곳에 피드백을 남겨주세요](https://github.com/vitejs/vite/discussions/13834).
+실험적인 기능입니다. [이곳에 피드백을 남겨주세요](https://github.com/vitejs/vite/discussions/13834).
 :::
 
 이미 배포된 에셋과 Public 디렉터리에 위치한 파일이 서로 다른 경로에 있을 수 있습니다. 이 경우 각각에 대해 다른 캐시 전략을 사용하고자 할 수 있는데, 이 때 Base 옵션에 대한 상세 설정이 필요합니다.

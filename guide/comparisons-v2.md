@@ -21,7 +21,7 @@ Vite는 보다 간소화된 경험을 제공하기 위해 하나의 단일 번�
 
 **더 빠른 디펜던시 사전 번들링**
 
-Vite는 디펜던시 사전 번들링을 위해 Rollup 대신 [esbuild](https://esbuild.github.io/)를 사용합니다. 이는 Cold-Starting과 같이 디펜던시를 다시 번들링 해야 하는 경우, 이 성능을 크게 향상시킵니다.
+Vite는 디펜던시 사전 번들링을 위해 Rollup 대신 [esbuild](https://esbuild.github.io/)를 사용합니다. 이는 Cold-Starting과 같이 디펜던시를 다시 번들링해야 하는 경우, 이 성능을 크게 향상시킵니다.
 
 **모노리포 지원**
 

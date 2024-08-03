@@ -261,7 +261,7 @@ Vite의 플러그인은 Vite 전용 훅을 사용할 수 있습니다. 물론 �
     name: 'configure-server',
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
-        // 이 곳에서 원하는 방식으로 요청을 핸들링 할 수 있습니다
+        // 이곳에서 원하는 방식으로 요청을 핸들링 할 수 있습니다
       })
     }
   })
@@ -279,7 +279,7 @@ Vite의 플러그인은 Vite 전용 훅을 사용할 수 있습니다. 물론 �
       // 실행될 훅을 반환합니다
       return () => {
         server.middlewares.use((req, res, next) => {
-          // 이 곳에서 원하는 방식으로 요청을 핸들링 할 수 있습니다
+          // 이곳에서 원하는 방식으로 요청을 핸들링 할 수 있습니다
         })
       }
     },

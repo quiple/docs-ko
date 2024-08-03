@@ -102,7 +102,7 @@ import InlineWorker from './shader.js?worker&inline'
 - 해싱 없이 항상 같은 이름을 갖는 에셋
 - 또는 URL을 얻기 위해 굳이 `import` 할 필요 없는 에셋
 
-`public` 디렉터리 아래에 에셋을 위치시키세요. 이 곳에 위치한 에셋은 개발 시에 `/` 경로에, 배포 시에는 `dist` 디렉터리에 위치하게 됩니다.
+`public` 디렉터리 아래에 에셋을 위치시키세요. 이곳에 위치한 에셋은 개발 시에 `/` 경로에, 배포 시에는 `dist` 디렉터리에 위치하게 됩니다.
 
 만약 `<root>/public` 디렉터리가 아닌 다른 디렉터리를 사용하고자 하는 경우, [`publicDir` 옵션](/config/shared-options.md#publicdir)을 이용할 수 있습니다.
 

@@ -427,7 +427,7 @@ esbuild를 사용하여 Vite 설정 파일을 수동으로 로드합니다.
 
 ## `preprocessCSS` {#preprocesscss}
 
-- **실험적 기능:** [이 곳에 피드백을 남겨주세요](https://github.com/vitejs/vite/discussions/13815)
+- **실험적 기능:** [이곳에 피드백을 남겨주세요](https://github.com/vitejs/vite/discussions/13815)
 
 **타입 시그니처:**
 

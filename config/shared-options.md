@@ -270,7 +270,7 @@ export default defineConfig({
 
 ## css.preprocessorMaxWorkers {#css-preprocessormaxworkers}
 
-- **실험적 기능:** [이 곳에 피드백을 남겨주세요](https://github.com/vitejs/vite/discussions/15835)
+- **실험적 기능:** [이곳에 피드백을 남겨주세요](https://github.com/vitejs/vite/discussions/15835)
 - **타입:** `number | true`
 - **기본값:** `0` (워커를 생성하지 않고 메인 스레드에서 실행)
 
@@ -278,7 +278,7 @@ export default defineConfig({
 
 ## css.devSourcemap {#css-devsourcemap}
 
-- **실험적 기능:** [이 곳에 피드백을 남겨주세요](https://github.com/vitejs/vite/discussions/13845)
+- **실험적 기능:** [이곳에 피드백을 남겨주세요](https://github.com/vitejs/vite/discussions/13845)
 - **타입:** `boolean`
 - **기본값:** `false`
 
@@ -286,7 +286,7 @@ export default defineConfig({
 
 ## css.transformer {#css-transformer}
 
-- **실험적 기능:** [이 곳에 피드백을 남겨주세요](https://github.com/vitejs/vite/discussions/13835)
+- **실험적 기능:** [이곳에 피드백을 남겨주세요](https://github.com/vitejs/vite/discussions/13835)
 - **타입:** `'postcss' | 'lightningcss'`
 - **기본값:** `'postcss'`
 
@@ -298,7 +298,7 @@ postcss(postcss-import)는 중복된 `@import`에 대해 브라우저와는 다�
 
 ## css.lightningcss {#css-lightningcss}
 
-- **실험적 기능:** [이 곳에 피드백을 남겨주세요](https://github.com/vitejs/vite/discussions/13835)
+- **실험적 기능:** [이곳에 피드백을 남겨주세요](https://github.com/vitejs/vite/discussions/13835)
 - **타입:**
 
 ```js
