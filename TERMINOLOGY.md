@@ -16,9 +16,9 @@
 | Message        | 메시지         |
 | Monorepo       | 모노리포       |
 | On-demand      | 온디맨드       |
-| Preview        | 프리뷰         |
+| Preview        | 미리보기       |
 | Production     | 프로덕션       |
-| Property       | 프로퍼티       |
+| Property       | 속성           |
 | Repository     | 리포지토리     |
 | Rollup         |                |
 | Root           | 루트           |
@@ -38,7 +38,7 @@
 | Example Usage  | 사용 예제      |
 | Type Signature | 타입 시그니처  |
 | Placeholder    | 자리 표시자    |
-| Import         | 임포트         |
-| Export         | 익스포트       |
+| Import         | 가져오기       |
+| Export         | 내보내기       |
 | Load           | 로드           |
 | Transform      | 변환           |
