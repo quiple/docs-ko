@@ -8,7 +8,7 @@
 
 최종 번들을 위한 브라우저 호환성 타깃입니다. 기본값은 Vite에서만 사용 가능한 `'modules'` 이며, [네이티브 ES 모듈](https://caniuse.com/es6-module), [네이티브 ESM의 동적 Import](https://caniuse.com/es6-module-dynamic-import), 그리고 [`import.meta`](https://caniuse.com/mdn-javascript_statements_import_meta)를 지원하는 브라우저를 타깃으로 합니다. 즉, Vite는 `'modules'`를 `['es2020', 'edge88', 'firefox78', 'chrome87', 'safari14']`로 대체합니다.
 
-또 다른 특수 값은 `'esnext'`입니다. 이는 네이티브 동적 가져오기가 지원되는 것으로 가정하고 가능한 한 적게 트랜스파일 됩니다:
+또 다른 특수 값은 `'esnext'`입니다. 이는 네이티브 동적 가져오기가 지원되는 것으로 가정하고 가능한 한 적게 트랜스파일됩니다:
 
 - `build.minify` 옵션이 `'terser'`이고 설치된 Terser 버전이 5.16.0 미만인 경우, `'esnext'`는 `'es2021'`로 강제 설정됩니다.
 - 다른 경우에는, 전혀 트랜스파일이 수행되지 않습니다.
@@ -34,7 +34,7 @@ import 'vite/modulepreload-polyfill'
 
 각 동적 가져오기를 위한 사전 로드되는 청크 목록은 Vite에서 산출합니다. 기본적으로, 이러한 디펜던시를 로드할 때 `base`를 포함하는 하나의 절대경로가 사용됩니다. `base`가 상대적인 경우 (`''` or `'./'`), 절대 경로가 최종 배포되는 base에 의존하지 않도록 `import.meta.url`이 런타임에 사용됩니다.
 
-디펜던시 목록 및 그 경로에 대한 세밀한 제어를 위해 `resolveDependencies` 함수를 사용한 실험적인 지원사항이 있습니다. [이 곳에 피드백을 남겨주세요](https://github.com/vitejs/vite/discussions/13841). `ResolveModulePreloadDependenciesFn` 유형의 함수가 그것입니다:
+디펜던시 목록 및 그 경로에 대한 세밀한 제어를 위해 `resolveDependencies` 함수를 사용한 실험적인 지원사항이 있습니다. [이곳에 피드백을 남겨주세요](https://github.com/vitejs/vite/discussions/13841). `ResolveModulePreloadDependenciesFn` 유형의 함수가 그것입니다:
 
 ```ts
 type ResolveModulePreloadDependenciesFn = (
@@ -233,7 +233,7 @@ Terser로 전달할 추가적인 [경량화 옵션](https://terser.org/docs/api-
 - **타입:** `boolean`
 - **기본값:** `outDir`이 `root` 안에 있다면 `true`
 
-기본적으로 Vite는 `outDir`이 프로젝트 루트 내부에 있는 경우 빌드할 때 이 곳을 비웁니다. `outDir`가 루트 외부에 있으면 실수로 중요한 파일을 제거하지 않도록 경고 메시지가 표시됩니다. 경고를 표시하지 않도록 이 옵션을 명시적으로 설정할 수 있습니다. 명령 줄에서는 `--emptyOutDir`로 이를 사용할 수 있습니다.
+기본적으로 Vite는 `outDir`이 프로젝트 루트 내부에 있는 경우 빌드할 때 이곳을 비웁니다. `outDir`가 루트 외부에 있으면 실수로 중요한 파일을 제거하지 않도록 경고 메시지가 표시됩니다. 경고를 표시하지 않도록 이 옵션을 명시적으로 설정할 수 있습니다. 명령 줄에서는 `--emptyOutDir`로 이를 사용할 수 있습니다.
 
 ## build.copyPublicDir {#build-copypublicdir}
 
